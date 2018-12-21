@@ -1,4 +1,4 @@
-# NEWS-app
+# news-app
 
 MEAN Stack for example news APP (project for learning).
 Angular 7+, Angular Material, NodeJS, Express, Socket.io, Mongoose, Mongo and TypeScript.
@@ -23,6 +23,16 @@ All other dependencies are loaded by Docker inside containers.
 ```
 Docker
 ```
+
+### Exposed Ports
+
+With Docker we expose services default ports to our machine:
+
+* **Front:** 4200:4200
+* **Back:** 3000:3000
+* **DB:** 27017:27017
+
+Configuration can be found in docker-compose.yml file.
 
 ### Installing
 
