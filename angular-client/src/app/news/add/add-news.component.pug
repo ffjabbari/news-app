@@ -1,0 +1,30 @@
+h1.title(mat-dialog-title) Add News
+mat-divider
+mat-dialog-content
+  .form-container()
+    form([formGroup]="addNewsFormGroup" novalidate, fxLayout='column', fxFlex)
+      .input-container(fxLayout='column')
+        mat-form-field(appearance="legacy")
+          mat-label Title
+          input(matInput, placeholder='Title for the news', formControlName='title', required)
+        .errors
+          .alert.alert-danger(*ngIf='title.invalid && (title.dirty || title.touched)')
+            div(*ngIf='title.errors.required')
+              span.alert-error Title is required.
+            div(*ngIf='title.errors.minlength')
+              span.alert-error  Title must be at least 4 characters long.
+      .input-container(fxLayout='column')
+        mat-form-field(appearance="legacy")
+          mat-label Body
+          textarea(matInput, placeholder='Write the body of the news', formControlName='body', required, rows='4', cols='50')
+        .errors
+          .alert.alert-danger(*ngIf='body.invalid && (body.dirty || body.touched)')
+            div(*ngIf='body.errors.required')
+              span.alert-error Body is required.
+            div(*ngIf='body.errors.minlength')
+              span.alert-error  Body must be at least 4 characters long.
+mat-divider
+mat-dialog-actions
+  button(mat-raised-button, color='primary', [disabled]='!addNewsFormGroup.valid', (click)="onAccept()") Save
+  button(mat-raised-button, (click)="onReset()", [disabled]="!addNewsFormGroup.dirty") Reset
+  button(mat-raised-button, color='primary', [mat-dialog-close]="news", cdkFocusInitial) Cancel

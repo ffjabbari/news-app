@@ -1,0 +1,26 @@
+.news-container
+  .loading-shade(*ngIf="loading")
+    mat-spinner
+  .news-filter
+    mat-form-field
+      mat-icon.filter-icon(mdSuffix) search
+      input(matInput (keyup)="applyFilter($event.target.value)", placeholder="Filter")
+  .mat-elevation-z8.news-table-container
+    mat-table#table.news-table([dataSource]='dataSource', matSort, matSortActive="date", matSortDisableClear, matSortDirection="asc")
+      // Id Column
+      ng-container(matColumnDef='_id')
+        mat-header-cell(*matHeaderCellDef, mat-sort-header) id
+        mat-cell(*matCellDef="let row") {{ row._id }}
+      ng-container(matColumnDef='title')
+        mat-header-cell(*matHeaderCellDef, mat-sort-header) title
+        mat-cell(*matCellDef="let row") {{ row.title }}
+      ng-container(matColumnDef='date')
+        mat-header-cell(*matHeaderCellDef, mat-sort-header) date
+        mat-cell(*matCellDef="let row") {{ row.date | date:'short' }}
+      ng-container(matColumnDef='action')
+        mat-header-cell(*matHeaderCellDef, mat-sort-header) #
+        mat-cell.delete-button(*matCellDef="let row")
+          button(mat-raised-button, (click)='delete(row)') Delete
+      mat-header-row(*matHeaderRowDef="displayedColumns")
+      mat-row(*matRowDef="let row; columns: displayedColumns;")
+    mat-paginator([length]='newsLength', [pageSizeOptions]="[5, 10, 25, 100]")

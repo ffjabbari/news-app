@@ -1,0 +1,12 @@
+mat-sidenav-container.sidenav-container
+  mat-sidenav.sidenav(#drawer='', fixedinviewport='true', [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'", [mode]="(isHandset$ | async) ? 'over' : 'side'", [opened]='!(isHandset$ | async)')
+    mat-toolbar Menu
+    mat-nav-list
+      a(mat-list-item='', routerLink='/news', routerLinkActive="active") List
+      a(mat-list-item='', routerLink='/news/archived', routerLinkActive="active") Archived
+  mat-sidenav-content
+    mat-toolbar(color='primary')
+      button(type='button', aria-label='Toggle sidenav', mat-icon-button='', (click)='drawer.toggle()', *ngIf='isHandset$ | async')
+        mat-icon(mdSuffix, aria-label='Side nav toggle icon') menu
+      span achrismatic-news
+    router-outlet

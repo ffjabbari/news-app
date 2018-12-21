@@ -1,0 +1,43 @@
+h1 {
+  &.title {
+    font-size: 22px;
+    color: #3f51b5;
+  }
+}
+
+.alert-error {
+  font-size: 10px;
+  color: #ff2344;
+  font-style: italic;
+}
+
+.alert-danger {
+  margin-bottom: 5px;
+}
+
+.form-container {
+  width: 400px;
+  margin-bottom: 30px;
+  margin-top: 30px;
+
+  .input-container {
+    margin-top: 10px;
+
+    textarea, input {
+      color: #3d3d3d;
+      font-size: 12px;
+    }
+
+    /deep/ mat-form-field.mat-form-field .mat-form-field-wrapper .mat-form-field-flex .mat-form-field-infix .mat-form-field-label-wrapper label.mat-form-field-label mat-label {
+      font-size: 14px !important;
+    }
+  }
+}
+
+.mat-dialog-actions {
+  justify-content: center;
+}
+
+.errors {
+  height:20px;
+}

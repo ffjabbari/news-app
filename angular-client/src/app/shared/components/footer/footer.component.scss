@@ -1,0 +1,24 @@
+mat-toolbar {
+  &.footer {
+    flex-direction: row !important;
+    justify-content: center;
+    align-items: center;
+  }
+
+  mat-toolbar-row {
+    &.mat-toolbar-row {
+      justify-content: center;
+      align-items: center;
+      a {
+        color: #5f5656;
+        font-size: 12px;
+        text-decoration: none;
+
+        &:hover {
+          color: #3d3d3d;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
