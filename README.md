@@ -1,4 +1,4 @@
-# NEWS-app
+# news-app
 
 MEAN Stack for example news APP (project for learning).
 Angular 7+, Angular Material, NodeJS, Express, Socket.io, Mongoose, Mongo and TypeScript.
