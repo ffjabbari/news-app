@@ -101,4 +101,4 @@ Those work must be recognized too.
 
 ## License
 
-Free to use project for learning purposes.1
+Free to use project for learning purposes.2
